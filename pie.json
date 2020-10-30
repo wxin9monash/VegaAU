@@ -1,0 +1,21 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": {
+    "text": "Indicator Type in 2018",
+    "fontSize": 30,
+    "color": "#3e4149"
+  },
+  "width": 800,
+  "height": 300,
+  "data": {
+    "url": "en_AUS_allyears_wits_trade_summary.csv"
+  },
+  "mark": { "type": "arc", "innerRadius": 50 },
+  "encoding": {
+    "theta": { "aggregate":"sum", "field": "2018", "type": "quantitative" },
+    "color": { "field": "Indicator Type", "type": "nominal" },
+    "tooltip": [{ "field": "Indicator Type" },{ "field": "2018" }]
+  },
+  "view": { "stroke": null }
+}
